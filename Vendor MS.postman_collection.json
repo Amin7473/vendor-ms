@@ -1,0 +1,794 @@
+{
+	"info": {
+		"_postman_id": "1c671369-e3eb-41c6-bc3e-291eebaae496",
+		"name": "Vendor MS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23462003"
+	},
+	"item": [
+		{
+			"name": "Vendors",
+			"item": [
+				{
+					"name": "Create vendor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Dan Jan\",\r\n    \"contact_details\" : \"+91 89327832\",\r\n    \"address\" : \"No.12 , 515, Bangalore\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/vendors/api/profiles/v1/create-vendor-api/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"profiles",
+								"v1",
+								"create-vendor-api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update vendor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Han Solo\",\r\n    \"contact_details\" : \"+12 89327832\",\r\n    \"address\" : \"No.12 , 515, China\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/vendors/api/profiles/v1/update-vendor-api/6/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"profiles",
+								"v1",
+								"update-vendor-api",
+								"6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete vendor",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/vendors/api/profiles/v1/delete-vendor-api/5/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"profiles",
+								"v1",
+								"delete-vendor-api",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/vendors/api/profiles/v1/vendor-list-api/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"profiles",
+								"v1",
+								"vendor-list-api",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/vendors/api/profiles/v1/vendor-list-api/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"vendors",
+										"api",
+										"profiles",
+										"v1",
+										"vendor-list-api",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 01 May 2024 21:24:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "738"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 5,\n            \"created_time\": \"2024-05-01T21:11:06.830626Z\",\n            \"updated_time\": \"2024-05-01T21:11:06.830626Z\",\n            \"name\": \"Dan Jan\",\n            \"contact_details\": \"+91 89327832\",\n            \"address\": \"No.12 , 515, Bangalore\",\n            \"vendor_code\": \"2d623110-e6fc-4b05-b864-818753400fea\",\n            \"on_time_delivery_rate\": null,\n            \"quality_rating_avg\": null,\n            \"average_response_time\": null,\n            \"fulfillment_rate\": null\n        },\n        {\n            \"id\": 6,\n            \"created_time\": \"2024-05-01T21:12:53.016631Z\",\n            \"updated_time\": \"2024-05-01T21:12:53.016631Z\",\n            \"name\": \"Han Solo\",\n            \"contact_details\": \"+12 89327832\",\n            \"address\": \"No.12 , 515, China\",\n            \"vendor_code\": \"c535b78a-b971-4ec2-a473-9f8e39ed0098\",\n            \"on_time_delivery_rate\": null,\n            \"quality_rating_avg\": null,\n            \"average_response_time\": null,\n            \"fulfillment_rate\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Vendor Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/vendors/api/profiles/v1/get-vendor-info-api/6/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"profiles",
+								"v1",
+								"get-vendor-info-api",
+								"6",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/vendors/api/profiles/v1/get-vendor-info-api/6/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"vendors",
+										"api",
+										"profiles",
+										"v1",
+										"get-vendor-info-api",
+										"6",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 01 May 2024 21:26:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "353"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": {\n        \"id\": 6,\n        \"created_time\": \"2024-05-01T21:12:53.016631Z\",\n        \"updated_time\": \"2024-05-01T21:12:53.016631Z\",\n        \"name\": \"Han Solo\",\n        \"contact_details\": \"+12 89327832\",\n        \"address\": \"No.12 , 515, China\",\n        \"vendor_code\": \"c535b78a-b971-4ec2-a473-9f8e39ed0098\",\n        \"on_time_delivery_rate\": null,\n        \"quality_rating_avg\": null,\n        \"average_response_time\": null,\n        \"fulfillment_rate\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Vendor Performance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/vendors/api/profiles/v1/vendor-performance-api/6/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"profiles",
+								"v1",
+								"vendor-performance-api",
+								"6",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/vendors/api/profiles/v1/vendor-performance-api/6/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"vendors",
+										"api",
+										"profiles",
+										"v1",
+										"vendor-performance-api",
+										"6",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 02 May 2024 20:39:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": {\n        \"id\": 6,\n        \"on_time_delivery_rate\": 1,\n        \"quality_rating_avg\": 5,\n        \"average_response_time\": 0,\n        \"fulfillment_rate\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Purchase Orders",
+			"item": [
+				{
+					"name": "Create PO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"delivery_date\" : \"2024-05-10 00:00:00\",\r\n    \"items\" : [\"Apples\",\"Mangoes\"],\r\n    \"quantity\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/vendors/api/purchase_orders/v1/create-purchase-order-api/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"purchase_orders",
+								"v1",
+								"create-purchase-order-api",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update PO details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\" : [\"Apples\",\"Mangoes\"],\r\n    \"quantity\" : 2,\r\n    \"vendor_id\" : 6\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/vendors/api/purchase_orders/v1/update-purchase-order-api/1/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"purchase_orders",
+								"v1",
+								"update-purchase-order-api",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Acknowledge PO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/vendors/api/purchase_orders/v1/acknowledge-purchase-order-api/1/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"purchase_orders",
+								"v1",
+								"acknowledge-purchase-order-api",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete PO",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/vendors/api/purchase_orders/v1/delete-purchase-order-api/1/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"purchase_orders",
+								"v1",
+								"delete-purchase-order-api",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PO list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/vendors/api/purchase_orders/v1/purchase-order-list-api/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"purchase_orders",
+								"v1",
+								"purchase-order-list-api",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/vendors/api/purchase_orders/v1/purchase-order-list-api/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"vendors",
+										"api",
+										"purchase_orders",
+										"v1",
+										"purchase-order-list-api",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 02 May 2024 20:42:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "855"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"created_time\": \"2024-05-01T21:42:16.498773Z\",\n            \"updated_time\": \"2024-05-02T20:37:17.064448Z\",\n            \"po_number\": \"1714599736498773\",\n            \"order_date\": \"2024-05-02T03:12:16.498773Z\",\n            \"delivery_date\": \"2024-05-10T00:00:00Z\",\n            \"items\": [\n                \"Apples\",\n                \"Mangoes\"\n            ],\n            \"quantity\": 2,\n            \"status\": \"COMPLETED\",\n            \"completed_date\": \"2024-05-02T20:37:17.056920Z\",\n            \"quality_rating\": 5,\n            \"issue_date\": null,\n            \"acknowledgment_date\": \"2024-05-02T03:21:19.055320Z\",\n            \"vendor\": 6\n        },\n        {\n            \"id\": 2,\n            \"created_time\": \"2024-05-02T20:41:36.234465Z\",\n            \"updated_time\": \"2024-05-02T20:41:36.234465Z\",\n            \"po_number\": \"1714682496232469\",\n            \"order_date\": \"2024-05-03T02:11:36.232469Z\",\n            \"delivery_date\": \"2024-05-11T00:00:00Z\",\n            \"items\": [\n                \"Kiwis\",\n                \"Water Melons\"\n            ],\n            \"quantity\": 4,\n            \"status\": \"PENDING\",\n            \"completed_date\": null,\n            \"quality_rating\": null,\n            \"issue_date\": null,\n            \"acknowledgment_date\": null,\n            \"vendor\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get PO Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/vendors/api/purchase_orders/v1/get-purchase-order-info-api/2/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"purchase_orders",
+								"v1",
+								"get-purchase-order-info-api",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 7c9bc85008f7f8a657936f243a56c0465c7d65e7",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/vendors/api/purchase_orders/v1/get-purchase-order-info-api/2/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"vendors",
+										"api",
+										"purchase_orders",
+										"v1",
+										"get-purchase-order-info-api",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 02 May 2024 20:44:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "391"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": {\n        \"id\": 2,\n        \"created_time\": \"2024-05-02T20:41:36.234465Z\",\n        \"updated_time\": \"2024-05-02T20:41:36.234465Z\",\n        \"po_number\": \"1714682496232469\",\n        \"order_date\": \"2024-05-03T02:11:36.232469Z\",\n        \"delivery_date\": \"2024-05-11T00:00:00Z\",\n        \"items\": [\n            \"Kiwis\",\n            \"Water Melons\"\n        ],\n        \"quantity\": 4,\n        \"status\": \"PENDING\",\n        \"completed_date\": null,\n        \"quality_rating\": null,\n        \"issue_date\": null,\n        \"acknowledgment_date\": null,\n        \"vendor\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Get Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"amin\",\r\n    \"password\" : \"Abcd.1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/vendors/api/profiles/v1/api-token-auth/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vendors",
+								"api",
+								"profiles",
+								"v1",
+								"api-token-auth",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
