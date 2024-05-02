@@ -54,10 +54,12 @@ class PurchaseOrderModel(TimeStampModel):
 
 @receiver(post_save, sender=PurchaseOrderModel)
 def purchase_order_model_post_save_signal(sender, instance, **kwargs):
-    """generating analytics after save"""
-    print(1)
+    """
+    generating analytics after save.
+    Have implemented vendor performance calculation here.
+    Every time a purchase order is updated the signal is triggered.
+    """
     if instance.vendor:
-        print(2)
         analytics_dict = {}
         all_pos = PurchaseOrderModel.objects.filter(vendor = instance.vendor)
         completed_on_time = PurchaseOrderModel.objects.filter(
@@ -68,7 +70,6 @@ def purchase_order_model_post_save_signal(sender, instance, **kwargs):
         completed_count = PurchaseOrderModel.objects.filter(
             vendor = instance.vendor,status = "COMPLETED").count()
         if completed_count != 0:
-            print(3)
             analytics_dict["on_time_delivery_rate"] = round(completed_on_time/completed_count, 2)
             quality_ratings = 0
             for obj in PurchaseOrderModel.objects.filter(
@@ -76,14 +77,12 @@ def purchase_order_model_post_save_signal(sender, instance, **kwargs):
                 quality_ratings += obj.quality_rating
             analytics_dict['quality_rating_avg'] = round(quality_ratings/completed_count, 2)
         if all_pos.count() != 0:
-            print(4)
             avg_res_time = 0
             for obj in all_pos:
                 if obj.acknowledgment_date != None and obj.issue_date != None:
                     avg_res_time += (obj.acknowledgment_date - obj.issue_date).seconds
             analytics_dict['average_response_time'] = round(avg_res_time/all_pos.count(), 2)
             analytics_dict['fulfillment_rate'] = round(completed_count/all_pos.count(), 2)
-        print(5)
         VendorModel.objects.filter(id = instance.vendor.id).update(**analytics_dict)
 
 class HistoricalPerformanceModel(TimeStampModel):
